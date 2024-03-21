@@ -9,6 +9,8 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 
+from src.components.data_transformation import DataTransformation
+from src.components.data_transformation import DataTransformationConfig
 #input to the datainjestion component(initial configuration), 
 #it now knows where to save the train,test,raw data after reading
 #dataclass is used since we need to define variables only
@@ -51,5 +53,8 @@ class DataInjestion:
 
 if __name__=='__main__':
     obj=DataInjestion()
-    obj.initiate_data_injestion()
+    train_data,test_data=obj.initiate_data_injestion()
+
+    data_transformation=DataTransformation()
+    train_arr,test_arr,_=data_transformation.initiate_data_transformation(train_data,test_data)
             
