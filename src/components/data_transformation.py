@@ -54,8 +54,7 @@ class DataTransformation:
             logging.info(f"numerical_columns : {numerical_columns}")
             logging.info(f"categorical_columns : {categorical_columns}")   
 
-            logging.info("numerical features standard scaling completed")  
-            logging.info("categorical features standard scaling,one hot encoding completed")
+            
 
             preprocessor=ColumnTransformer(
                 [("num_pipeline",num_pipeline,numerical_columns),
